@@ -1,12 +1,13 @@
-import { View, Text, Image, TouchableOpacity, TextInput, StyleSheet } from 'react-native'
+import { View, Text, Image, TouchableOpacity, TextInput, StyleSheet} from 'react-native'
 import React from 'react'
 
 
-const SignIn = () => {
+const SignIn = ({navigation}) => {
     const [text, onChangeText] = React.useState('');
     // const [number, onChangeNumber] = React.useState('');
   return (
-    <View>
+    
+    <View style = {{backgroundColor : '#ffffff', height: '100%', width:'100%'}}>
         <View style = {{ paddingTop: 30, alignItems: 'center'}}>
             <Image source = {require('../img/logo_emer.png')} style ={{ width: 120, height: 180}} />
         </View>
@@ -19,7 +20,7 @@ const SignIn = () => {
             <Text style = {{color : '#333333', fontSize : 14, fontWeight : 'bold', marginTop : 10}}>Welcome back, log in and get started</Text>                 
         </View>
         <View style = {{marginLeft: 25}}>
-            <Text style = {{color: '#A0A0A0', fontSize: 16, fontWeight: '700', marginTop: 25, alignItems : 'right' }}>Email address</Text> 
+            <Text style = {{color: '#A0A0A0', fontSize: 16, fontWeight: '700', marginTop: 25, alignItems:'flex-end' }}>Email address</Text> 
             <TextInput  style= {{height: 50,
                                 marginRight: 25,
                                 borderWidth: 1,
@@ -27,13 +28,13 @@ const SignIn = () => {
                                 padding: 10,
                                 borderRadius: 23,
                                 marginTop: 5,
-                                backgroundColor: 'rgba(255, 255, 255, 0.80)',
+                                backgroundColor: 'rgba(255, 255, 255, 0.90)',
                                 elevation: 4}}
                         onChangeText= {onChangeText}
                         value= {text}
                         keyboardType="email-address"
             />
-            <Text style = {{color: '#A0A0A0', fontSize: 16, fontWeight: '700', marginTop: 10, alignItems : 'right' }}>Password</Text> 
+            <Text style = {{color: '#A0A0A0', fontSize: 16, fontWeight: '700', marginTop: 10, alignItems:'flex-end' }}>Password</Text> 
             <TextInput  style= {{height: 50,
                                 marginRight: 25,
                                 borderWidth: 1,
@@ -41,7 +42,7 @@ const SignIn = () => {
                                 padding: 10,
                                 borderRadius: 23,
                                 marginTop: 5,
-                                backgroundColor: 'rgba(255, 255, 255, 0.80)',
+                                backgroundColor: 'rgba(255, 255, 255, 0.90)',
                                 elevation: 4}}
                         onChangeText= {onChangeText}
                         value= {text}
@@ -51,7 +52,7 @@ const SignIn = () => {
             <Text style={{ color: '#0068C9', fontSize: 14, fontWeight: '700' }}>Forgot your password?</Text>
         </View>
         <View style = {{marginLeft: 25, marginRight: 25 }}>
-            <TouchableOpacity onPress={() => {}}
+            <TouchableOpacity onPress={() => navigation.navigate("Page3")}
                 style={{backgroundColor: '#B4DDFC',
                         padding: 15,
                         borderRadius: 23,
@@ -86,7 +87,9 @@ const SignIn = () => {
                             alignItems : 'center',
                             marginTop: 25}}>
                 <Text style = {{color : '#A0A0A0', fontSize : 14, fontWeight : 'bold'}}>Already have an Account?
-                    <Text style={{ color: '#0068C9', fontSize: 14, fontWeight: '900' }}> Sign up</Text>
+                    <Text style={{ color: '#0068C9', fontSize: 14, fontWeight: '900' }}
+                        onPress={() => navigation.navigate("Page5")}> Sign up 
+                    </Text>
                 </Text> 
             </View>
         
@@ -147,7 +150,7 @@ const SignIn = () => {
 //         fontSize: 16, 
 //         fontWeight: '700', 
 //         marginTop: 10, 
-//         alignItems : 'right' 
+//         alignItems:'flex-end' 
 //     },
 //     forgotPass: {
 //         alignItems: 'flex-end', 

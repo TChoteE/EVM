@@ -2,7 +2,7 @@ import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { StyleSheet } from 'react-native'
 
-const SignIn = () => {
+const OTPcode = () => {
   return (
     <View>
         <View style = {{marginTop: 25,
@@ -61,4 +61,4 @@ const SignIn = () => {
 //   }
 // })
 
-export default SignIn
+export default OTPcode

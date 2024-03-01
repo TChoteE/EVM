@@ -1,24 +1,36 @@
 import { View, Text, Image, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { StyleSheet } from 'react-native'
+// import LottieView from '../node_modules/lottie-react-native/lib/typescript/types'
+import LottieView from 'lottie-react-native';
 
-
-const SignIn = () => {
+const Verifieds = ({navigation}) => {
   return (
-    <View>
-        <View style = {{marginTop: 25,
-                        marginLeft: 25,
-                        paddingTop: 50 }}>
-            <Text style={{ color: '#333333', fontSize: 24, fontWeight: '900' }}>Verified!</Text>
+    <View style={{justifyContent: 'center',
+                  alignItems: 'center'}}>
+        <View>
+          <LottieView
+            style = {{
+              width : 300,
+              height : 250,
+              marginTop: 100,
+            }}
+            source = {require("../animation/Animation2.json")}
+            autoPlay
+            loop={false}
+          />
+        </View>
+        <View style = {{paddingTop: 35 }}>
+            <Text style={{ color: '#333333', fontSize: 24, fontWeight: '900', textAlign: 'center' }}>Verified!</Text>
             <Text style = {{color : '#333333', fontSize : 14, fontWeight : '700', marginTop : 10}}>You have suscessfully connect account</Text>                 
         </View>
         <View style = {{marginLeft: 25, marginRight: 25, justifyContent: 'center', alignItems: 'center' }}>
-            <TouchableOpacity onPress={() => {}}
-                style={{backgroundColor: '#B4DDFC',
+            <TouchableOpacity onPress={() => navigation.navigate("Page4")}
+                style={{backgroundColor: '#0068C9',
                         padding: 15,
                         borderRadius: 23,
                         marginBottom: 25,
-                        marginTop: 150,
+                        marginTop: 80,
                         width: 130}} >
                
                 <Text style = {{textAlign: 'center', color: '#FFFFFF', fontSize: 18, fontWeight: 'bold' }}>OK</Text>
@@ -67,4 +79,4 @@ const SignIn = () => {
 //     }
 // })
 
-export default SignIn 
+export default Verifieds 
